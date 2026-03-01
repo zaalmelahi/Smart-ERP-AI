@@ -1,0 +1,27 @@
+{
+  "actions": [],
+  "creation": "2025-12-05 10:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": ["role", "content", "timestamp", "column_break_1", "intent_detected", "action_taken", "entities_extracted"],
+  "fields": [
+    {"default": "user", "fieldname": "role", "fieldtype": "Select", "in_list_view": 1, "label": "Role", "options": "user\nassistant\nsystem", "reqd": 1},
+    {"fieldname": "content", "fieldtype": "Long Text", "in_list_view": 1, "label": "Content", "reqd": 1},
+    {"fieldname": "timestamp", "fieldtype": "Datetime", "in_list_view": 1, "label": "Timestamp"},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "intent_detected", "fieldtype": "Data", "label": "Intent Detected"},
+    {"fieldname": "action_taken", "fieldtype": "Data", "label": "Action Taken"},
+    {"fieldname": "entities_extracted", "fieldtype": "JSON", "label": "Entities Extracted"}
+  ],
+  "istable": 1,
+  "links": [],
+  "modified": "2025-12-05 10:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Smart erp ai",
+  "name": "Smart ERP AI Message",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

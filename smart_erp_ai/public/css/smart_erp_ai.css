@@ -1,0 +1,601 @@
+/* Smart ERP AI Chat Widget Styles */
+/* Supports both LTR and RTL layouts (Arabic) */
+
+/* Floating Button */
+.hr-assistant-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: var(--primary);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	z-index: 1050;
+}
+
+/* RTL Support - Button on left side */
+[dir="rtl"] .hr-assistant-button,
+html[lang="ar"] .hr-assistant-button {
+	right: auto;
+	left: 20px;
+}
+
+.hr-assistant-button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hr-assistant-button.active {
+	background: var(--gray-600);
+}
+
+.hr-assistant-button svg {
+	width: 24px;
+	height: 24px;
+}
+
+/* Chat Window */
+.hr-assistant-window {
+	position: fixed;
+	bottom: 90px;
+	right: 20px;
+	width: 380px;
+	max-width: calc(100vw - 40px);
+	height: 500px;
+	max-height: calc(100vh - 120px);
+	background: var(--card-bg);
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	z-index: 1049;
+	opacity: 0;
+	transform: translateY(20px) scale(0.95);
+	transition: all 0.3s ease;
+}
+
+/* RTL Support - Window on left side */
+[dir="rtl"] .hr-assistant-window,
+html[lang="ar"] .hr-assistant-window {
+	right: auto;
+	left: 20px;
+	direction: rtl;
+	text-align: right;
+}
+
+.hr-assistant-window.open {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+/* Header */
+.hr-assistant-header {
+	padding: 12px 16px;
+	background: var(--primary);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-shrink: 0;
+}
+
+/* RTL Header */
+[dir="rtl"] .hr-assistant-header,
+html[lang="ar"] .hr-assistant-header {
+	flex-direction: row-reverse;
+}
+
+.hr-assistant-title {
+	font-weight: 600;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.hr-assistant-title .indicator {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #4caf50;
+}
+
+.hr-assistant-actions {
+	display: flex;
+	gap: 4px;
+}
+
+/* RTL Actions */
+[dir="rtl"] .hr-assistant-actions,
+html[lang="ar"] .hr-assistant-actions {
+	flex-direction: row-reverse;
+}
+
+.hr-assistant-actions .btn {
+	padding: 4px 6px;
+	background: rgba(255, 255, 255, 0.2);
+	border: none;
+	color: white;
+}
+
+.hr-assistant-actions .btn:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/* Messages Area */
+.hr-assistant-messages {
+	flex: 1;
+	overflow-y: auto;
+	padding: 16px;
+	background: var(--bg-color);
+}
+
+.hr-assistant-messages-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* Individual Messages */
+.hr-assistant-message {
+	max-width: 85%;
+	display: flex;
+	flex-direction: column;
+}
+
+.hr-assistant-message.user {
+	align-self: flex-end;
+}
+
+.hr-assistant-message.assistant {
+	align-self: flex-start;
+}
+
+/* RTL Message Alignment */
+[dir="rtl"] .hr-assistant-message.user,
+html[lang="ar"] .hr-assistant-message.user {
+	align-self: flex-start;
+}
+
+[dir="rtl"] .hr-assistant-message.assistant,
+html[lang="ar"] .hr-assistant-message.assistant {
+	align-self: flex-end;
+}
+
+.hr-assistant-message.system {
+	align-self: center;
+	max-width: 95%;
+}
+
+.hr-assistant-message-content {
+	padding: 10px 14px;
+	border-radius: 16px;
+	font-size: 13px;
+	line-height: 1.7;
+	word-wrap: break-word;
+	font-family: inherit;
+}
+
+/* Arabic text styling */
+[dir="rtl"] .hr-assistant-message-content,
+html[lang="ar"] .hr-assistant-message-content {
+	font-family: "Noto Sans Arabic", "Segoe UI", "Tahoma", sans-serif;
+	line-height: 1.8;
+}
+
+.hr-assistant-message.user .hr-assistant-message-content {
+	background: var(--primary);
+	color: white;
+	border-bottom-right-radius: 4px;
+}
+
+/* RTL User Message */
+[dir="rtl"] .hr-assistant-message.user .hr-assistant-message-content,
+html[lang="ar"] .hr-assistant-message.user .hr-assistant-message-content {
+	border-bottom-right-radius: 16px;
+	border-bottom-left-radius: 4px;
+}
+
+.hr-assistant-message.assistant .hr-assistant-message-content {
+	background: var(--card-bg);
+	border: 1px solid var(--border-color);
+	border-bottom-left-radius: 4px;
+}
+
+/* RTL Assistant Message */
+[dir="rtl"] .hr-assistant-message.assistant .hr-assistant-message-content,
+html[lang="ar"] .hr-assistant-message.assistant .hr-assistant-message-content {
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 4px;
+}
+
+.hr-assistant-message.system .hr-assistant-message-content {
+	background: transparent;
+	padding: 0;
+}
+
+.hr-assistant-message-time {
+	font-size: 10px;
+	color: var(--text-muted);
+	margin-top: 4px;
+	padding: 0 4px;
+}
+
+.hr-assistant-message.user .hr-assistant-message-time {
+	text-align: right;
+}
+
+/* RTL Time Alignment */
+[dir="rtl"] .hr-assistant-message.user .hr-assistant-message-time,
+html[lang="ar"] .hr-assistant-message.user .hr-assistant-message-time {
+	text-align: left;
+}
+
+[dir="rtl"] .hr-assistant-message.assistant .hr-assistant-message-time,
+html[lang="ar"] .hr-assistant-message.assistant .hr-assistant-message-time {
+	text-align: right;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+	display: flex;
+	gap: 4px;
+	padding: 4px 0;
+}
+
+.typing-indicator span {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--text-muted);
+	animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+	animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+	animation-delay: -0.16s;
+}
+
+@keyframes typing {
+	0%,
+	80%,
+	100% {
+		transform: scale(0.6);
+		opacity: 0.5;
+	}
+	40% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* Input Area */
+.hr-assistant-input-area {
+	padding: 12px;
+	background: var(--card-bg);
+	border-top: 1px solid var(--border-color);
+	flex-shrink: 0;
+}
+
+.hr-assistant-quick-actions {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+}
+
+/* RTL Quick Actions */
+[dir="rtl"] .hr-assistant-quick-actions,
+html[lang="ar"] .hr-assistant-quick-actions {
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+}
+
+.hr-assistant-quick-actions .btn {
+	font-size: 11px;
+	padding: 4px 10px;
+	background: var(--bg-color);
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	color: var(--text-color);
+}
+
+.hr-assistant-quick-actions .btn:hover {
+	background: var(--primary);
+	color: white;
+	border-color: var(--primary);
+}
+
+.hr-assistant-input-wrapper {
+	display: flex;
+	gap: 8px;
+	align-items: flex-end;
+}
+
+/* RTL Input Wrapper */
+[dir="rtl"] .hr-assistant-input-wrapper,
+html[lang="ar"] .hr-assistant-input-wrapper {
+	flex-direction: row-reverse;
+}
+
+.hr-assistant-input {
+	flex: 1;
+	padding: 10px 14px;
+	border: 1px solid var(--border-color);
+	border-radius: 20px;
+	resize: none;
+	font-size: 13px;
+	line-height: 1.4;
+	max-height: 100px;
+	overflow-y: auto;
+	background: var(--control-bg);
+}
+
+/* RTL Input */
+[dir="rtl"] .hr-assistant-input,
+html[lang="ar"] .hr-assistant-input {
+	direction: rtl;
+	text-align: right;
+	font-family: "Noto Sans Arabic", "Segoe UI", "Tahoma", sans-serif;
+}
+
+.hr-assistant-input:focus {
+	outline: none;
+	border-color: var(--primary);
+	box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.hr-assistant-send {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+/* RTL Send Button - flip arrow */
+[dir="rtl"] .hr-assistant-send svg,
+html[lang="ar"] .hr-assistant-send svg {
+	transform: scaleX(-1);
+}
+
+.hr-assistant-send:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.hr-assistant-send svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* Action Results */
+.hr-assistant-action-result {
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 12px;
+}
+
+.hr-assistant-action-result.success {
+	background: rgba(76, 175, 80, 0.1);
+	border: 1px solid rgba(76, 175, 80, 0.3);
+	color: #2e7d32;
+}
+
+.hr-assistant-action-result.error {
+	background: rgba(244, 67, 54, 0.1);
+	border: 1px solid rgba(244, 67, 54, 0.3);
+	color: #c62828;
+}
+
+.hr-assistant-action-result.info {
+	background: rgba(33, 150, 243, 0.1);
+	border: 1px solid rgba(33, 150, 243, 0.3);
+	color: #1565c0;
+}
+
+.hr-assistant-action-result a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+/* Confirmation Dialog */
+.hr-assistant-confirmation pre {
+	background: var(--bg-color);
+	padding: 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	overflow-x: auto;
+}
+
+/* RTL Confirmation */
+[dir="rtl"] .hr-assistant-confirmation,
+html[lang="ar"] .hr-assistant-confirmation {
+	direction: rtl;
+	text-align: right;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .hr-assistant-message.assistant .hr-assistant-message-content {
+	background: var(--gray-800);
+	border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .hr-assistant-quick-actions .btn {
+	background: var(--gray-800);
+	border-color: var(--gray-700);
+}
+
+/* File Attachment Button */
+.hr-assistant-attach {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	background: var(--bg-color);
+	border: 1px solid var(--border-color);
+	color: var(--text-muted);
+	transition: all 0.2s ease;
+}
+
+.hr-assistant-attach:hover {
+	background: var(--primary);
+	border-color: var(--primary);
+	color: white;
+}
+
+.hr-assistant-attach svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* Attachments Preview Area */
+.hr-assistant-attachments-preview {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-bottom: 8px;
+	min-height: 0;
+}
+
+.hr-assistant-attachments-preview:empty {
+	display: none;
+}
+
+.hr-assistant-attachment-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 10px;
+	background: var(--bg-color);
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	font-size: 11px;
+	max-width: 180px;
+}
+
+.hr-assistant-attachment-item .attachment-icon {
+	flex-shrink: 0;
+	display: flex;
+	color: var(--text-muted);
+}
+
+.hr-assistant-attachment-item .attachment-name {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--text-color);
+}
+
+.hr-assistant-attachment-item .attachment-loading {
+	flex-shrink: 0;
+}
+
+.hr-assistant-attachment-item .attachment-loading .spinner-border {
+	width: 12px;
+	height: 12px;
+	border-width: 2px;
+}
+
+.hr-assistant-attachment-item .attachment-remove {
+	flex-shrink: 0;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	color: var(--text-muted);
+	display: flex;
+	border-radius: 50%;
+	transition: all 0.2s ease;
+}
+
+.hr-assistant-attachment-item .attachment-remove:hover {
+	color: var(--red-500);
+	background: rgba(var(--red-rgb), 0.1);
+}
+
+/* RTL Attachment Styles */
+[dir="rtl"] .hr-assistant-attachments-preview,
+html[lang="ar"] .hr-assistant-attachments-preview {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hr-assistant-attachment-item,
+html[lang="ar"] .hr-assistant-attachment-item {
+	flex-direction: row-reverse;
+}
+
+/* Message with attachment indicator */
+.hr-assistant-message-content .attachment-indicator {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 12px;
+	margin-top: 6px;
+	opacity: 0.8;
+}
+
+/* Dark Mode Support for Attachments */
+[data-theme="dark"] .hr-assistant-attach {
+	background: var(--gray-800);
+	border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .hr-assistant-attachment-item {
+	background: var(--gray-800);
+	border-color: var(--gray-700);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+	.hr-assistant-window {
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		max-width: 100%;
+		height: calc(100vh - 60px);
+		max-height: calc(100vh - 60px);
+		border-radius: 12px 12px 0 0;
+	}
+
+	/* RTL Mobile */
+	[dir="rtl"] .hr-assistant-window,
+	html[lang="ar"] .hr-assistant-window {
+		right: 0;
+		left: 0;
+	}
+
+	.hr-assistant-button {
+		bottom: 10px;
+		right: 10px;
+		width: 50px;
+		height: 50px;
+	}
+
+	/* RTL Mobile Button */
+	[dir="rtl"] .hr-assistant-button,
+	html[lang="ar"] .hr-assistant-button {
+		right: auto;
+		left: 10px;
+	}
+}

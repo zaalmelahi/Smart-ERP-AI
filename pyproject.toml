@@ -1,9 +1,9 @@
 [project]
 name = "smart_erp_ai"
 authors = [
-    { name = "Zaid", email = "zaud@gmail.com"}
+    { name = "Zaid", email = "zaid@gmail.com"}
 ]
-description = "smart ai"
+description = "smart erp ai"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

@@ -1,0 +1,1 @@
+# Smart ERP AI module

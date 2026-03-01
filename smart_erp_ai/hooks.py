@@ -1,14 +1,14 @@
 app_name = "smart_erp_ai"
-app_title = "Smart erp ai"
+app_title = "Smart ERP AI"
 app_publisher = "Zaid"
-app_description = "smart ai"
-app_email = "zaud@gmail.com"
+app_description = "AI-powered ERP assistant for ERPNext (HR, Sales, Purchase, Inventory, and more)"
+app_email = "zaid@gmail.com"
 app_license = "mit"
 
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["frappe", "erpnext", "hrms", "frappe_assistant_core"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -25,8 +25,8 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/smart_erp_ai/css/smart_erp_ai.css"
-# app_include_js = "/assets/smart_erp_ai/js/smart_erp_ai.js"
+app_include_css = ["/assets/smart_erp_ai/css/smart_erp_ai.css"]
+app_include_js = ["/assets/smart_erp_ai/js/smart_erp_ai_widget.js"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/smart_erp_ai/css/smart_erp_ai.css"
@@ -83,7 +83,8 @@ app_license = "mit"
 # ------------
 
 # before_install = "smart_erp_ai.install.before_install"
-# after_install = "smart_erp_ai.install.after_install"
+after_install = "smart_erp_ai.install.after_install"
+after_migrate = "smart_erp_ai.install.install_fac_hr_assistant_prompt"
 
 # Uninstallation
 # ------------
@@ -170,6 +171,19 @@ app_license = "mit"
 # -------
 
 # before_tests = "smart_erp_ai.install.before_tests"
+
+# Website Route Rules for WhatsApp Webhook
+website_route_rules = [
+	{"from_route": "/whatsapp/webhook", "to_route": "smart_erp_ai.whatsapp.handle_webhook"},
+]
+override_whitelisted_methods = {
+	"smart_erp_ai.whatsapp.handle_webhook": "smart_erp_ai.whatsapp.handle_webhook",
+}
+
+# Assistant tools for frappe_assistant_core integration
+assistant_tools = [
+	"smart_erp_ai.assistant_tools.get_employee_context.GetEmployeeContext",
+]
 
 # Overriding Methods
 # ------------------------------
