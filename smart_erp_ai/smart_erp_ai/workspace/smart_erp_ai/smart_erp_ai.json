@@ -1,0 +1,134 @@
+{
+ "charts": [
+  {
+   "chart_name": "Conversion",
+   "label": "Conversion Depend on User"
+  }
+ ],
+ "content": "[{\"id\":\"oDyRo_NFb6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Smart ERP Ai</span>\",\"col\":12}},{\"id\":\"4TXcvdkXmf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Conversation Number \",\"col\":4}},{\"id\":\"nA94oZMHrY\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Conversion Depend on User\",\"col\":12}},{\"id\":\"ZY_mXJhQdF\",\"type\":\"card\",\"data\":{\"card_name\":\"Setting\",\"col\":4}},{\"id\":\"uXDz1usbCQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Prompt\",\"col\":4}},{\"id\":\"idnNNB7cf6\",\"type\":\"card\",\"data\":{\"card_name\":\"Logs\",\"col\":4}}]",
+ "creation": "2026-03-02 00:39:22.515327",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "comment",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Smart ERP Ai",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Setting",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Smart ERP AI Settings",
+   "link_count": 0,
+   "link_to": "Smart ERP AI Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FAC Plugin Configuration",
+   "link_count": 0,
+   "link_to": "FAC Plugin Configuration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "FAC Tool Configuration",
+   "link_count": 0,
+   "link_to": "FAC Tool Configuration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prompt",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prompt Category",
+   "link_count": 0,
+   "link_to": "Prompt Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prompt Template",
+   "link_count": 0,
+   "link_to": "Prompt Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Logs",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Smart ERP AI Conversation",
+   "link_count": 0,
+   "link_to": "Smart ERP AI Conversation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-03-02 00:54:22.982535",
+ "modified_by": "Administrator",
+ "module": "Smart erp ai",
+ "name": "Smart ERP Ai",
+ "number_cards": [
+  {
+   "label": "Conversation Number ",
+   "number_card_name": "sm"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Assistant Admin"
+  },
+  {
+   "role": "Assistant User"
+  }
+ ],
+ "sequence_id": 39.0,
+ "shortcuts": [],
+ "title": "Smart ERP Ai"
+}
