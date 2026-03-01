@@ -84,7 +84,10 @@ app_include_js = ["/assets/smart_erp_ai/js/smart_erp_ai_widget.js"]
 
 # before_install = "smart_erp_ai.install.before_install"
 after_install = "smart_erp_ai.install.after_install"
-after_migrate = "smart_erp_ai.install.install_fac_hr_assistant_prompt"
+after_migrate = [
+	"smart_erp_ai.install.install_fac_hr_assistant_prompt",
+	"smart_erp_ai.install.sync_workspace",
+]
 
 # Uninstallation
 # ------------

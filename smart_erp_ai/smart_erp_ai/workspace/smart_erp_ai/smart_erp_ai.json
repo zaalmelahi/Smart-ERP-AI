@@ -120,14 +120,7 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [
-  {
-   "role": "Assistant Admin"
-  },
-  {
-   "role": "Assistant User"
-  }
- ],
+ "roles": [],
  "sequence_id": 39.0,
  "shortcuts": [],
  "title": "Smart ERP Ai"

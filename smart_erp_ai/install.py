@@ -9,6 +9,7 @@ def after_install():
 	create_smart_erp_ai_settings()
 	add_naming_series_options()
 	install_fac_hr_assistant_prompt()
+	sync_workspace()
 
 
 def create_smart_erp_ai_settings():
@@ -93,3 +94,19 @@ def install_fac_hr_assistant_prompt():
 		frappe.db.commit()
 	except Exception as e:
 		frappe.log_error(f"Install FAC hr_assistant_chat prompt: {e}", "Smart ERP AI Install")
+
+
+def sync_workspace():
+	"""Ensure Smart ERP AI workspace is synced and visible."""
+	try:
+		for name in ("Smart ERP AI", "Smart ERP Ai"):
+			if frappe.db.exists("Workspace", name):
+				doc = frappe.get_doc("Workspace", name)
+				if doc.roles and doc.module == "Smart erp ai":
+					doc.clear_table("roles")
+					doc.flags.ignore_permissions = True
+					doc.save()
+					frappe.db.commit()
+		frappe.clear_cache()
+	except Exception as e:
+		frappe.log_error(f"Sync workspace: {e}", "Smart ERP AI Install")
