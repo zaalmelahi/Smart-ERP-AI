@@ -4,12 +4,30 @@ smart erp ai
 
 ### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+Smart ERP AI requires [Frappe Assistant Core](https://github.com/zaalmelahi/Frappe_Assistant_Core) (FAC). The install script fetches both automatically.
+
+**Option 1: Install script (recommended)**
+
+From bench root:
+```bash
+cd $PATH_TO_YOUR_BENCH
+bash apps/smart_erp_ai/install.sh YOUR_SITE
+```
+
+Or if you don't have the app yet, download and run:
+```bash
+cd $PATH_TO_YOUR_BENCH
+curl -sSL https://raw.githubusercontent.com/zaalmelahi/Smart-ERP-AI/main/install.sh -o install_smart_erp_ai.sh
+bash install_smart_erp_ai.sh YOUR_SITE
+```
+
+**Option 2: Manual steps**
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app smart_erp_ai
+bench get-app https://github.com/zaalmelahi/Frappe_Assistant_Core.git
+bench get-app https://github.com/zaalmelahi/Smart-ERP-AI.git
+bench --site YOUR_SITE install-app smart_erp_ai
 ```
 
 ### Contributing
